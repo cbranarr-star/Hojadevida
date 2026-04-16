@@ -1,57 +1,38 @@
-import React from 'react';
+import { Briefcase, Database, Layout } from 'lucide-react';
 
-const experiences = [
+const roles = [
   {
     company: "SAVIA SALUD EPS",
     role: "Analista de Inteligencia de Negocios",
-    period: "02/2025 - En curso",
-    details: [
-      "Generación de informes estratégicos en PowerBI sobre Cuentas Médicas y Riesgo en Salud.",
-      "Creación de queries SQL en MySQL y MariaDB para extracción de información.",
-      "Desarrollo de scripts en Python para cruces de datos masivos.",
-      "Manejo de orquestadores como Airflow y control de versiones con GitHub."
-    ],
-    bg: "bg-[#f5f5f7]", text: "text-[#1d1d1f]"
+    period: "2025 - Presente",
+    desc: "Liderando la automatización de informes estratégicos en Power BI y queries masivos en MariaDB.",
+    icon: <Database className="text-[#0071e3]" size={24} />
   },
   {
     company: "SAVIA SALUD EPS",
     role: "Analista de Infraestructura",
-    period: "05/2023 - 02/2025",
-    details: [
-      "Administración de Active Directory y monitoreo de servidores críticos.",
-      "Gestión de plataformas VPN Fortigate y actualización de inventario.",
-      "Migración de servidores a la nube y ejecución de planes DRP."
-    ],
-    bg: "bg-[#000000]", text: "text-white"
-  },
-  {
-    company: "COMWARE",
-    role: "Analista Mesa de Servicios",
-    period: "06/2019 - 04/2021",
-    details: [
-      "Soporte a la Red MPLS del operador Tigo-Une en topologías de anillo y bus.",
-      "Monitoreo de red con iMaster NCE y manejo de tickets en BMC Remedy."
-    ],
-    bg: "bg-[#f5f5f7]", text: "text-[#1d1d1f]"
+    period: "2023 - 2025",
+    desc: "Administración de Directorio Activo y migración de servidores críticos a la nube.",
+    icon: <Layout className="text-[#0071e3]" size={24} />
   }
 ];
 
 export default function Experience() {
   return (
-    <section>
-      {experiences.map((exp, i) => (
-        <div key={i} className={`${exp.bg} ${exp.text} py-24 px-6`}>
-          <div className="max-w-[980px] mx-auto">
-            <h2 className="text-[40px] font-semibold tracking-[-0.011em] mb-2">{exp.company}</h2>
-            <h3 className="text-[21px] text-[#0071e3] mb-8">{exp.role}</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {exp.details.map((detail, j) => (
-                <li key={j} className="text-[17px] leading-[1.47] opacity-80">• {detail}</li>
-              ))}
-            </ul>
+    <div className="max-w-[1200px] mx-auto py-20 px-6">
+      <h2 className="text-[12px] uppercase tracking-[0.2em] text-[#0071e3] font-bold mb-4 text-center">Trayectoria</h2>
+      <h3 className="text-[48px] font-semibold text-center mb-16 gradient-text">Experiencia Profesional.</h3>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {roles.map((item, i) => (
+          <div key={i} className="glass-panel p-10 rounded-[24px] hover:scale-[1.02] transition-transform duration-500">
+            <div className="mb-6">{item.icon}</div>
+            <span className="text-[14px] text-gray-400 font-medium">{item.period}</span>
+            <h4 className="text-[24px] font-bold mt-2 mb-4">{item.company}</h4>
+            <p className="text-[17px] text-gray-400 leading-relaxed">{item.desc}</p>
           </div>
-        </div>
-      ))}
-    </section>
+        ))}
+      </div>
+    </div>
   );
 }
