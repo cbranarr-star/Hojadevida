@@ -3,100 +3,36 @@
 @tailwind utilities;
 
 :root {
-  /* Paleta de colores oficial */
-  --apple-black: #000000;
-  --apple-gray: #f5f5f7;
-  --apple-near-black: #1d1d1f;
+  --apple-bg: #000000;
+  --apple-card: #1c1c1e;
   --apple-blue: #0071e3;
-  --apple-link: #0066cc;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --apple-text-secondary: rgba(255, 255, 255, 0.5);
 }
 
 body {
-  /* Tipografía SF Pro fallbacks y suavizado de fuente */
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--apple-bg);
+  color: #ffffff;
+  /* Suavizado de fuente estilo Apple  */
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--apple-black);
-  color: #ffffff;
+  letter-spacing: -0.022em;
 }
 
-/* --- Clases de Utilidad Estilo Apple --- */
-
-/* Títulos con interlineado ajustado y tracking negativo */
-.apple-headline {
-  font-size: 56px;
-  font-weight: 600;
-  line-height: 1.07;
-  letter-spacing: -0.028em;
-}
-
-@media (max-width: 768px) {
-  .apple-headline {
-    font-size: 40px;
-  }
-}
-
-/* Botones tipo Píldora (Pill) */
-.btn-apple-primary {
-  background-color: var(--apple-blue);
-  color: #ffffff;
-  padding: 8px 22px;
-  border-radius: 980px;
-  font-size: 17px;
-  font-weight: 400;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-apple-primary:hover {
-  background-color: #0077ed;
-  transform: scale(1.02);
-}
-
-/* Navegación con efecto Glassmorphism */
-.nav-glass {
-  background-color: rgba(0, 0, 0, 0.8);
+/* Efecto de Vidrio para la Navegación y Tarjetas [cite: 4, 6] */
+.glass-panel {
+  background: rgba(28, 28, 30, 0.7);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Secciones de información (Gris Claro) */
-.section-light {
-  background-color: var(--apple-gray);
-  color: var(--apple-near-black);
+/* Sombra de elevación profunda para productos [cite: 2, 6] */
+.apple-shadow {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 40px;
 }
 
-/* Tarjetas con sombras suaves y difusas */
-.apple-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
-  transition: transform 0.3s ease;
-}
-
-/* Enlaces estilo Apple con Chevron */
-.apple-link {
-  color: var(--apple-blue);
-  font-size: 17px;
-  text-decoration: none;
-}
-
-.apple-link:hover {
-  text-decoration: underline;
-}
-
-/* Animación de entrada para los elementos */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-apple {
-  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
