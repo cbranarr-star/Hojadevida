@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --apple-blue: #0071e3;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estilo de los botones Pill de tu especificación  */
+.btn-pill {
+  border-radius: 980px;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
