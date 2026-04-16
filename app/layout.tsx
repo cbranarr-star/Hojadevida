@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Cristian Bran Arriaga | Portafolio',
-  description: 'Especialista Big Data e BI',
+  title: 'Cristian Bran Arriaga | Portfolio',
+  description: 'Especialista en Big Data e BI e Ingeniero en Telecomunicaciones',
 }
 
 export default function RootLayout({
@@ -11,8 +11,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body className="antialiased bg-apple-black">{children}</body>
+    <html lang="es" className="scroll-smooth">
+      <body className="antialiased bg-[#000000] text-white">
+        {children}
+      </body>
     </html>
   )
 }
