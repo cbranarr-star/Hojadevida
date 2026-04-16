@@ -1,12 +1,11 @@
 {
-  "name": "hojadevida-apple-style",
+  "name": "hojadevida-apple",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "next": "latest",
